@@ -1,6 +1,6 @@
 #Elias Sandoval
 #Partner: Brian Santillan
-def printMenu(): #function for print menu. This while display the option for the user.
+def printMenu(): #function for print menu. This will display the option for the user.
     while True:
         print("Menu\n-------------\n1.Encode\n2.Decode\n3.Quit\n")
         option = int(input("Please enter an option: "))
@@ -17,6 +17,14 @@ def encodePassword(password): #Function for encode password.
 
     return newPassword
 
+def decodePassword(password): #function to decode the password (made by Brian)
+    newPassword = ""
+    for digit in password:
+        newDigit = int(digit) - 3
+        newPassword += str(newDigit)
+
+    return newPassword
+
 def main(): # main function code
     while True:
         option = printMenu()
@@ -25,7 +33,8 @@ def main(): # main function code
             encodedPassword = encodePassword(password)
             print("Your password has been encoded and stored!")
             print(encodedPassword)
-        elif
+        elif option == 2:
+            decodedPassword = decodePassword(encodedPassword)
             print(f"The encoded password is {encodedPassword}, and the original passcode is {decodedPassword}.")
         elif option == 3:
             quit()
